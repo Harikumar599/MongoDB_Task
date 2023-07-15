@@ -1,0 +1,427 @@
+Milestone - MongoDB
+
+1.  Write a MongoDB query to display at least 10 details of the documents of  book_id, Btitle, authors in array 
+and price for all the documents in the collection Bookstore. 
+
+Book> db.bookstore.insertMany([{"book_id":"DF01","Btitle":"THE GUIDE","authors":["NARAYAN"],price:500}])
+Book> db.bookstore.insertMany([{"book_id":"DF03","Btitle":"MIDNIGHT","authors":["Salman Rustan","Fustin rofid"],price:800}])
+Book> db.bookstore.insertMany([{"book_id":"DF04","Btitle":"THE INTERPRETER OF MALADIES","authors":["Jhumpa Lahiri"],price:1500}])
+Book> db.bookstore.insertMany([{"book_id":"DF05","Btitle":"A SUITABLE BOY","authors":["VIKRAM SETH"],price:1200}])
+Book> db.bookstore.insertMany([{"book_id":"DF06","Btitle":"GOD OF SMALLTHINGS","authors":["Arundhati Roy"],price:1800}])
+Book> db.bookstore.insertMany([{"book_id":"DF07","Btitle":"THE GLASS PLACE","authors":["Rohinton"],price:2000}])
+Book> db.bookstore.insertMany([{"book_id":"DF08","Btitle":"THE INHERITANCE OF LOSS","authors":["Kiran Desai"],price:500}])
+Book> db.bookstore.insertMany([{"book_id":"DF09","Btitle":"THE INDIAN PRINCE","authors":["Mulk Raj"],price:1000}])
+Book> db.bookstore.insertMany([{"book_id":"DF10","Btitle":"SORT NOTE","authors":["Jason Tron"],price:800}])
+
+Book> db.bookstore.find()
+[
+  {
+    _id: ObjectId("64b278c113f31d2fb9fedbe7"),
+    book_id: 'DF01',
+    Btitle: 'THE GUIDE',
+    authors: [ 'NARAYAN' ],
+    price: 500
+  },
+  {
+    _id: ObjectId("64b2798c13f31d2fb9fedbe8"),
+    book_id: 'DF02',
+    Btitle: 'A FINE BALANCE',
+    authors: [ 'Rohinton' ],
+    price: 1000
+  },
+  {
+    _id: ObjectId("64b279fe13f31d2fb9fedbe9"),
+    book_id: 'DF03',
+    Btitle: 'MIDNIGHT',
+    authors: [ 'Salman Rustan', 'Fustin rofid' ],
+    price: 800
+  },
+  {
+    _id: ObjectId("64b27a3c13f31d2fb9fedbea"),
+    book_id: 'DF04',
+    Btitle: 'THE INTERPRETER OF MALADIES',
+    authors: [ 'Jhumpa Lahiri' ],
+    price: 1500
+  },
+  {
+    _id: ObjectId("64b27a8613f31d2fb9fedbeb"),
+    book_id: 'DF05',
+    Btitle: 'A SUITABLE BOY',
+    authors: [ 'VIKRAM SETH' ],
+    price: 1200
+  },
+  {
+    _id: ObjectId("64b27adc13f31d2fb9fedbec"),
+    book_id: 'DF06',
+    Btitle: 'GOD OF SMALLTHINGS',
+    authors: [ 'Arundhati Roy' ],
+    price: 1800
+  },
+  {
+    _id: ObjectId("64b27b7413f31d2fb9fedbed"),
+    book_id: 'DF07',
+    Btitle: 'THE GLASS PLACE',
+    authors: [ 'Rohinton' ],
+    price: 2000
+  },
+  {
+    _id: ObjectId("64b27bae13f31d2fb9fedbee"),
+    book_id: 'DF08',
+    Btitle: 'THE INHERITANCE OF LOSS',
+    authors: [ 'Kiran Desai' ],
+    price: 500
+  },
+  {
+    _id: ObjectId("64b27bda13f31d2fb9fedbef"),
+    book_id: 'DF09',
+    Btitle: 'THE INDIAN PRINCE',
+    authors: [ 'Mulk Raj' ],
+    price: 1000
+  },
+  {
+    _id: ObjectId("64b27c0713f31d2fb9fedbf0"),
+    book_id: 'DF10',
+    Btitle: 'SORT NOTE',
+    authors: [ 'Jason Tron' ],
+    price: 800
+  }
+ {
+    _id: ObjectId("64b2811a13f31d2fb9fedbf1"),
+    book_id: 'DF11',
+    Btitle: 'MONEY TO LOSS',
+    authors: [ 'Kiran Desai' ],
+    price: 2300
+  },
+  {
+    _id: ObjectId("64b2813a13f31d2fb9fedbf2"),
+    book_id: 'DF12',
+    Btitle: 'DOSE',
+    authors: [ 'Kiran Desai' ],
+    price: 2300
+  }
+]
+
+2. Write a Book> db.bookstore.find({},{_id:0,"Btitle":1,"authors":1,"price":1})
+[
+  { Btitle: 'THE GUIDE', authors: [ 'NARAYAN' ], price: 500 },
+  { Btitle: 'A FINE BALANCE', authors: [ 'Rohinton' ], price: 1000 },
+  {
+    Btitle: 'MIDNIGHT',
+    authors: [ 'Salman Rustan', 'Fustin rofid' ],
+    price: 800
+  },
+  {
+    Btitle: 'THE INTERPRETER OF MALADIES',
+    authors: [ 'Jhumpa Lahiri' ],
+    price: 1500
+  },
+  { Btitle: 'A SUITABLE BOY', authors: [ 'VIKRAM SETH' ], price: 1200 },
+  {
+    Btitle: 'GOD OF SMALLTHINGS',
+    authors: [ 'Arundhati Roy' ],
+    price: 1800
+  },
+  { Btitle: 'THE GLASS PLACE', authors: [ 'Rohinton' ], price: 2000 },
+  {
+    Btitle: 'THE INHERITANCE OF LOSS',
+    authors: [ 'Kiran Desai' ],
+    price: 500
+  },
+  { Btitle: 'THE INDIAN PRINCE', authors: [ 'Mulk Raj' ], price: 1000 },
+  { Btitle: 'SORT NOTE', authors: [ 'Jason Tron' ], price: 800 }
+  { Btitle: 'MONEY TO LOSS', authors: [ 'Kiran Desai' ], price: 2300 },
+  { Btitle: 'DOSE', authors: [ 'Kiran Desai' ], price: 2300 }
+]MongoDB query to display the fields Btitle,  authors and price but exclude 
+the bookid for all the documents in the collection Bookstore.
+
+3. Write a MongoDB query to display the first 3 books based on similar authors.
+Book> db.bookstore.find({"authors":"Kiran Desai"}).limit(3);
+[
+  {
+    _id: ObjectId("64b27bae13f31d2fb9fedbee"),
+    book_id: 'DF08',
+    Btitle: 'THE INHERITANCE OF LOSS',
+    authors: [ 'Kiran Desai' ],
+    price: 500
+  },
+  {
+    _id: ObjectId("64b2811a13f31d2fb9fedbf1"),
+    book_id: 'DF11',
+    Btitle: 'MONEY TO LOSS',
+    authors: [ 'Kiran Desai' ],
+    price: 2300
+  },
+  {
+    _id: ObjectId("64b2813a13f31d2fb9fedbf2"),
+    book_id: 'DF12',
+    Btitle: 'DOSE',
+    authors: [ 'Kiran Desai' ],
+    price: 2300
+  }
+]
+
+4. Write a MongoDB query to find the book price more than 1500. 
+Book> db.bookstore.find({"price":{$gt:1500}},{_id:0,"Btitle":1,"authors":1,"price":1,"book_id":1})
+[
+  {
+    book_id: 'DF06',
+    Btitle: 'GOD OF SMALLTHINGS',
+    authors: [ 'Arundhati Roy' ],
+    price: 1800
+  },
+  {
+    book_id: 'DF07',
+    Btitle: 'THE GLASS PLACE',
+    authors: [ 'Rohinton' ],
+    price: 2000
+  },
+  {
+    book_id: 'DF11',
+    Btitle: 'MONEY TO LOSS',
+    authors: [ 'Kiran Desai' ],
+    price: 2300
+  },
+  {
+    book_id: 'DF12',
+    Btitle: 'DOSE',
+    authors: [ 'Kiran Desai' ],
+    price: 2300
+  }
+]
+
+5. Write a MongoDB query to find the book title who's price is  more than 800 but less than 2000.
+Book> db.bookstore.find({"price":{$gt:800 , $lt:2000}},{_id:0,"Btitle":1,"price":1});
+[
+  { Btitle: 'A FINE BALANCE', price: 1000 },
+  { Btitle: 'THE INTERPRETER OF MALADIES', price: 1500 },
+  { Btitle: 'A SUITABLE BOY', price: 1200 },
+  { Btitle: 'GOD OF SMALLTHINGS', price: 1800 },
+  { Btitle: 'THE INDIAN PRINCE', price: 1000 }
+]
+
+6. Write a MongoDB query to arrange the book name of the bookstore in ascending order along with all the columns. 
+Book> db.bookstore.find({},{_id:0,"Btitle":1}).sort({"Btitle":1})
+[
+  { Btitle: 'A FINE BALANCE' },
+  { Btitle: 'A SUITABLE BOY' },
+  { Btitle: 'DOSE' },
+  { Btitle: 'GOD OF SMALLTHINGS' },
+  { Btitle: 'MIDNIGHT' },
+  { Btitle: 'MONEY TO LOSS' },
+  { Btitle: 'SORT NOTE' },
+  { Btitle: 'THE GLASS PLACE' },
+  { Btitle: 'THE GUIDE' },
+  { Btitle: 'THE INDIAN PRINCE' },
+  { Btitle: 'THE INHERITANCE OF LOSS' },
+  { Btitle: 'THE INTERPRETER OF MALADIES' }
+]
+
+7. Write a MongoDB query to arrange the book name of the bookstore in ascending order along with all the columns. 
+Book> db.bookstore.find({},{_id:0,"Btitle":1}).sort({"Btitle":1})
+[
+  { Btitle: 'A FINE BALANCE' },
+  { Btitle: 'A SUITABLE BOY' },
+  { Btitle: 'DOSE' },
+  { Btitle: 'GOD OF SMALLTHINGS' },
+  { Btitle: 'MIDNIGHT' },
+  { Btitle: 'MONEY TO LOSS' },
+  { Btitle: 'SORT NOTE' },
+  { Btitle: 'THE GLASS PLACE' },
+  { Btitle: 'THE GUIDE' },
+  { Btitle: 'THE INDIAN PRINCE' },
+  { Btitle: 'THE INHERITANCE OF LOSS' },
+  { Btitle: 'THE INTERPRETER OF MALADIES' }
+]
+
+8. Write a MongoDB query to know whether the author in the authors list.
+Book> db.bookstore.find({"authors":"NARAYAN"},{_id:0,});
+[
+  {
+    book_id: 'DF01',
+    Btitle: 'THE GUIDE',
+    authors: [ 'NARAYAN' ],
+    price: 500
+  }
+]
+
+
+9.Write a MongoDB query to update & increase the book price Rs.500 in all book name as "MongoDB Practice".
+Book> db.bookstore.update({},{$inc:{price:500}});
+DeprecationWarning: Collection.update() is deprecated. Use updateOne, updateMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Book> db.bookstore.find();
+[
+  {
+    _id: ObjectId("64b278c113f31d2fb9fedbe7"),
+    book_id: 'DF01',
+    Btitle: 'THE GUIDE',
+    authors: [ 'NARAYAN' ],
+    price: 1000
+  },
+  {
+    _id: ObjectId("64b2798c13f31d2fb9fedbe8"),
+    book_id: 'DF02',
+    Btitle: 'A FINE BALANCE',
+    authors: [ 'Rohinton' ],
+    price: 1000
+  },
+  {
+    _id: ObjectId("64b279fe13f31d2fb9fedbe9"),
+    book_id: 'DF03',
+    Btitle: 'MIDNIGHT',
+    authors: [ 'Salman Rustan', 'Fustin rofid' ],
+    price: 800
+  },
+  {
+    _id: ObjectId("64b27a3c13f31d2fb9fedbea"),
+    book_id: 'DF04',
+    Btitle: 'THE INTERPRETER OF MALADIES',
+    authors: [ 'Jhumpa Lahiri' ],
+    price: 1500
+  },
+  {
+    _id: ObjectId("64b27a8613f31d2fb9fedbeb"),
+    book_id: 'DF05',
+    Btitle: 'A SUITABLE BOY',
+    authors: [ 'VIKRAM SETH' ],
+    price: 1200
+  },
+  {
+    _id: ObjectId("64b27adc13f31d2fb9fedbec"),
+    book_id: 'DF06',
+    Btitle: 'GOD OF SMALLTHINGS',
+    authors: [ 'Arundhati Roy' ],
+    price: 1800
+  },
+  {
+    _id: ObjectId("64b27b7413f31d2fb9fedbed"),
+    book_id: 'DF07',
+    Btitle: 'THE GLASS PLACE',
+    authors: [ 'Rohinton' ],
+    price: 2000
+  },
+  {
+    _id: ObjectId("64b27bae13f31d2fb9fedbee"),
+    book_id: 'DF08',
+    Btitle: 'THE INHERITANCE OF LOSS',
+    authors: [ 'Kiran Desai' ],
+    price: 500
+  },
+  {
+    _id: ObjectId("64b27bda13f31d2fb9fedbef"),
+    book_id: 'DF09',
+    Btitle: 'THE INDIAN PRINCE',
+    authors: [ 'Mulk Raj' ],
+    price: 1000
+  },
+  {
+    _id: ObjectId("64b27c0713f31d2fb9fedbf0"),
+    book_id: 'DF10',
+    Btitle: 'SORT NOTE',
+    authors: [ 'Jason Tron' ],
+    price: 800
+  },
+  {
+    _id: ObjectId("64b2811a13f31d2fb9fedbf1"),
+    book_id: 'DF11',
+    Btitle: 'MONEY TO LOSS',
+    authors: [ 'Kiran Desai' ],
+    price: 2300
+  },
+  {
+    _id: ObjectId("64b2813a13f31d2fb9fedbf2"),
+    book_id: 'DF12',
+    Btitle: 'DOSE',
+    authors: [ 'Kiran Desai' ],
+    price: 2300
+  }
+]
+
+10. Write a MongoDB query to use Update modifiers ($set, $push,  $pull, $upsert) in bookstore.
+
+push
+-----
+db.bookstore.update({Btitle:"MONEY TO LOSS"},{$push:{authors:"Hari"}})
+db.bookstore.find({"book_id":"DF11"});
+[
+  {
+    _id: ObjectId("64b2811a13f31d2fb9fedbf1"),
+    book_id: 'DF11',
+    Btitle: 'MONEY TO LOSS',
+    authors: [ 'Kiran Desai', 'Hari' ],
+    price: 2300
+  }
+]
+ 
+set
+----
+Book> db.bookstore.update({Btitle:"DOSE"},{$set:{price:500}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Book> db.bookstore.find({"Btitle":"DOSE"});
+[
+  {
+    _id: ObjectId("64b2813a13f31d2fb9fedbf2"),
+    book_id: 'DF12',
+    Btitle: 'DOSE',
+    authors: [ 'Kiran Desai' ],
+    price: 500
+  }
+]
+
+pull
+-----
+Book> db.bookstore.update({Btitle:"MONEY TO LOSS"},{$pull:{authors:"Hari"}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Book> db.bookstore.find({"Btitle":"MONEY TO LOSS"});
+[
+  {
+    _id: ObjectId("64b2811a13f31d2fb9fedbf1"),
+    book_id: 'DF11',
+    Btitle: 'MONEY TO LOSS',
+    authors: [ 'Kiran Desai' ],
+    price: 2300
+  }
+]
+
+upset
+-----
+ db.bookstore.updateOne({book_id:"DF10"},{$set:{Btitle:"COUNTIT",authors:["Hari"],price:100}},{upset:true})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Book> db.bookstore.find({"book_id":"DF10"})
+[
+  {
+    _id: ObjectId("64b27c0713f31d2fb9fedbf0"),
+    book_id: 'DF10',
+    Btitle: 'COUNTIT',
+    authors: [ 'Hari' ],
+    price: 100
+  }
+]
+
+
+
+
